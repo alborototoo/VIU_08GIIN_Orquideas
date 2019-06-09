@@ -8,8 +8,12 @@ from lote import load_lote
 from validador import validar_entero
 from cargar import load_data
 from guardar import save_data
+from invernadero import load_invernadero
 
-def load_menu(dicLotes):
+strFileNameLote = "file_lote"
+strFileNameInvernadero = "file_invernadero"
+
+def load_menu(dicLotes, dicInvernaderos):
     os.system('cls')
     print("--- Orquideas ---")
     print("")
@@ -29,19 +33,24 @@ def load_menu(dicLotes):
         menu = validar_entero("Opcion:")
          
     if menu == 1:
-        load_menu(load_lote(dicLotes))
+        dicLotes = load_lote(dicLotes)
+        load_menu(dicLotes, dicInvernaderos)
     elif menu == 2:
-         print("Cargando Invernaderos")
-         load_menu()
+         dicInvernaderos = load_invernadero(dicInvernaderos)
+         load_menu(dicLotes, dicInvernaderos)
     elif menu == 3:
          print("Cargando Simular")
-         load_menu()
+         load_menu(dicLotes, dicInvernaderos)
     elif menu == 4:
          print("Cargando Información del sistema")
-         load_menu()
+         load_menu(dicLotes, dicInvernaderos)
     elif menu == 5:
-         load_menu(load_data())
+        dicLotes = load_data(strFileNameLote)
+        dicInvernaderos = load_data(strFileNameInvernadero)
+        load_menu(dicLotes, dicInvernaderos)
     elif menu == 6:
-         load_menu(save_data(dicLotes))
+        dicLotes = save_data(strFileNameLote, dicLotes)
+        dicInvernaderos = save_data(strFileNameInvernadero, dicInvernaderos)
+        load_menu(dicLotes, dicInvernaderos)
     else:
          print("Gracias por usar Orquideas")

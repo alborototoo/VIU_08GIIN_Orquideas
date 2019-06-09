@@ -4,33 +4,29 @@
 
 import json
 
-strFileNameLote = "file_lote"
-strFileNameInvernadero = "file_invernadero"
-
-def create_file():
+def create_file(strFileName):
     try:
-        file = open(strFileNameLote,"a")
+        file = open(strFileName,"a")
         file.close()
     except ValueError:
-        print("")
+        print(ValueError)
 
-def load_file():
+def load_file(strFileName):
     try:
-        create_file()
-        file = open(strFileNameLote,"r")
+        create_file(strFileName)
+        file = open(strFileName,"r")
         dicLotes = json.load(file)
-        print(dicLotes)
         file.close()
         return dicLotes
     except ValueError:
-        print("")
+        print(ValueError)
         
-def save_file(dicLotes):
+def save_file(strFileName, dic):
     try:
-        create_file()
-        file = open(strFileNameLote,"a")
-        file.write(json.dumps(dicLotes))
+        create_file(strFileName)
+        file = open(strFileName,"a")
+        file.write(json.dumps(dic))
         file.close()
-        return dicLotes
+        return dic
     except ValueError:
-        print("")
+        print(ValueError)

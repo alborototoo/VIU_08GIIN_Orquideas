@@ -30,7 +30,7 @@ def load_lote(dicLotes):
     
     dicLotes[strLote] = {
           'Cantidad Plantas':intCantidadPlanta,
-          'Clima':strClima,
+          'Clima':strClima.lower().capitalize(),
           'Dias Andes':intDiasAndes,
           'Dias Costa':intDiasCosta
     }     

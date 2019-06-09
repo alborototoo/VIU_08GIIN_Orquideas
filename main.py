@@ -5,5 +5,6 @@
 from menu import load_menu
 
 dicLotes = {}
+dicInvernaderos = {}
 
-load_menu(dicLotes)
+load_menu(dicLotes, dicInvernaderos)

@@ -6,8 +6,8 @@ import os
 
 from fichero import load_file
 
-def load_data():
+def load_data(strFileName):
     os.system('cls')
     print("Modulo Cargar datos")
     print("")
-    return load_file()
+    return load_file(strFileName)
