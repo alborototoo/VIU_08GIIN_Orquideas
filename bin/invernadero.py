@@ -26,7 +26,8 @@ def load_invernadero(dicInvernaderos):
     
     dicInvernaderos[strInvernadero] = {
           'Clima':strClima.lower().capitalize(),
-          'Capacidad':intCapacidad
+          'Capacidad':intCapacidad,
+          'Lote:':""
     }     
     
     intContinuar = validar_entero("¿Introducir Invernadero adicional(1) o Salir(0)?:")

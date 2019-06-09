@@ -9,6 +9,7 @@ from validador import validar_entero
 from cargar import load_data
 from guardar import save_data
 from invernadero import load_invernadero
+from informacion import load_informacion
 
 strFileNameLote = "file_lote"
 strFileNameInvernadero = "file_invernadero"
@@ -42,7 +43,7 @@ def load_menu(dicLotes, dicInvernaderos):
          print("Cargando Simular")
          load_menu(dicLotes, dicInvernaderos)
     elif menu == 4:
-         print("Cargando Información del sistema")
+         load_informacion(dicLotes, dicInvernaderos)
          load_menu(dicLotes, dicInvernaderos)
     elif menu == 5:
         dicLotes = load_data(strFileNameLote)

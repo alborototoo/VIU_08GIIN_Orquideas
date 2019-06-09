@@ -2,12 +2,9 @@
 @author: Jon Lebrero Catalina
 """
 
-import os
-
 from fichero import save_file
 
 def save_data(strFileName, dic):
-    os.system('cls')
-    print("Modulo Guardar datos")
-    print("")
+    if len(dic) == 0:
+        return dic
     return save_file(strFileName, dic)
